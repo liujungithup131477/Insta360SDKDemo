@@ -20,17 +20,29 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+/**
+ *  播放图片
+ */
 - (IBAction)playImage:(id)sender {
+    /** 从 storyBoard 获取 ARVPlayerVC*/
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ARVPlayerVC *playerVC = [storyBoard instantiateViewControllerWithIdentifier:@"playerVC"];
+    /** 设置播放的条件*/
     playerVC.isSourceVideo = NO;
+    /** 以模态视图的方式跳转到对应的 ARVPlayerVC 控制器*/
     [self presentViewController:playerVC animated:YES completion:nil];
 }
 
+/**
+ *  播放视频
+ */
 - (IBAction)playVideo:(id)sender {
+    /** 从 storyBoard 获取 ARVPlayerVC*/
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ARVPlayerVC *playerVC = [storyBoard instantiateViewControllerWithIdentifier:@"playerVC"];
+    /** 设置播放的条件*/
     playerVC.isSourceVideo = YES;
+    /** 以模态视图的方式跳转到对应的 ARVPlayerVC 控制器*/
     [self presentViewController:playerVC animated:YES completion:nil];
 }
 

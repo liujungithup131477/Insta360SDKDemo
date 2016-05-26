@@ -50,10 +50,10 @@
     NSURL *fileURL;
     if (self.isSourceVideo) {
         //网络MP4视频
-//        filePath = @"http://cloud.insta360.com/public/media/mp4/88a951c7acf980f716c1bf1eb6cf12ca_1440x720.mp4";
+        filePath = @"http://cloud.insta360.com/public/media/mp4/88a951c7acf980f716c1bf1eb6cf12ca_1440x720.mp4";
         
 //        filePath = @"http://60.55.12.147:80/45f1c9b883f8be484652306556e7f596.m3u8?w=1&key=19cbaf0bf152a9105c97a5998f776f3f&k=f77ff661a8c55b1ab955785b54e99c7a-5ae2-1464172960&bppcataid=961&type=phone.ios.vip&sv=7.5&platform=iphone4&ft=1&accessType=wifi&vvid=7D38F7BB-CB9E-423A-8620-707DC7739B0E&video=true";
-        filePath = @"http://video.iwjw.com/14651978969258742911-8000k";
+//        filePath = @"http://video.iwjw.com/14651978969258742911-8000k";
         //网络rtmp
 //        filePath = @"rtmp://ess.vzhibo.tv/live/test";
         //本地视频
