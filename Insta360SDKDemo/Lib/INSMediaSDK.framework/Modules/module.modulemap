@@ -1,0 +1,6 @@
+framework module INSMediaSDK {
+  umbrella header "INSMediaSDK.h"
+
+  export *
+  module * { export * }
+}
