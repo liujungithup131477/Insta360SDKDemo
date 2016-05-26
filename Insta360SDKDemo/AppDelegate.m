@@ -3,7 +3,7 @@
 //  Insta360SDKDemo
 //
 //  Created by RonanWhite on 4/8/16.
-//  Copyright © 2016 Insta360. All rights reserved.
+//  Copyright © 2016 Insta360. All rights reserved.  保留所有权利
 //
 
 #import "AppDelegate.h"
