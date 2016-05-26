@@ -40,7 +40,9 @@
 @property (nonatomic, strong) NSString *duration;
 /** 指示器*/
 @property (nonatomic, strong) UIActivityIndicatorView *indicatorView;
+/** 播放的单个文件*/
 @property (nonatomic, strong) ARVPlayerItem *playerItem;
+/** 文件播放控制器*/
 @property (nonatomic, strong) ARVPlayerController *playerController;
 /** 播放视图工具条视图*/
 @property (weak, nonatomic) IBOutlet UIView *videoToolView;
@@ -91,6 +93,7 @@
         filePath = [filePath stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         fileURL = [NSURL URLWithString:filePath];
 
+        /** 播放单个文件，初始化控制器*/
         self.playerItem = [[ARVPlayerItem alloc] initWithURL:fileURL offset:nil type:ARVItemTypeVideo];
         self.playerController = [[ARVPlayerController alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight) item:self.playerItem renderType:INSRenderTypeSphericalRender];
         self.playerController.delegate = self;
@@ -127,7 +130,7 @@
         
         self.playerItem = [[ARVPlayerItem alloc] initWithURL:fileURL offset:nil type:ARVItemTypeUnknown];
         self.playerController = [[ARVPlayerController alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight) item:self.playerItem renderType:INSRenderTypeSphericalRender];
-        [self.view insertSubview:self.playerController.playerView atIndex:0];
+        [self.view insertSubview:self.playerController.playerView atIndex:0];  // 播放器放在最下面
         [self setupUI];
         
         
@@ -353,7 +356,7 @@
 - (void)updateCurrentTime:(double)time {
     if (!self.isSliding) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.progressSlider setValue:ceilf(time)];
+            [self.progressSlider setValue:ceilf(time)];  //ceilf(time) 功能：返回大于或者等于指定表达式的最小整数；返回不小于 value 的下一个整数，value 如果有小数部分则进一位。ceil() 返回的类型仍然是 float，因为 float 值的范围通常比 integer 要大。
             self.timeLabel.text = [NSString stringWithFormat:@"%@/%@", [self formatTimeWithSecondsValue:ceilf(time)], self.duration];
         });
     }

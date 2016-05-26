@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		285F9C5E1CF6FB5800438F5D /* demo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 285F9C5D1CF6FB5800438F5D /* demo.jpg */; };
 		34012A431CCB55C600A784AB /* logo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 34012A421CCB55C600A784AB /* logo2.png */; };
 		342C47AB1CE1784900194A03 /* ARVPlayerController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34794AB81CD369080037FA3E /* ARVPlayerController.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		344A215F1CEAC0FE00325E55 /* INSMediaSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34D96F661CB74EC400CD556E /* INSMediaSDK.framework */; };
@@ -45,6 +46,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		285F9C5D1CF6FB5800438F5D /* demo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = demo.jpg; sourceTree = "<group>"; };
 		34012A421CCB55C600A784AB /* logo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo2.png; sourceTree = "<group>"; };
 		344F9B061CDC76F200EA7A85 /* libiconv.2.4.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.4.0.tbd; path = usr/lib/libiconv.2.4.0.tbd; sourceTree = SDKROOT; };
 		34794AB81CD369080037FA3E /* ARVPlayerController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ARVPlayerController.framework; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 		34D96F8D1CB753E500CD556E /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				285F9C5D1CF6FB5800438F5D /* demo.jpg */,
 				34012A421CCB55C600A784AB /* logo2.png */,
 			);
 			path = Resource;
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34D96F5C1CB74E3100CD556E /* LaunchScreen.storyboard in Resources */,
+				285F9C5E1CF6FB5800438F5D /* demo.jpg in Resources */,
 				34D96F591CB74E3100CD556E /* Assets.xcassets in Resources */,
 				34D96F571CB74E3100CD556E /* Main.storyboard in Resources */,
 				34012A431CCB55C600A784AB /* logo2.png in Resources */,
