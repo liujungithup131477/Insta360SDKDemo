@@ -6,6 +6,15 @@
 //  Copyright © 2016 Insta360. All rights reserved.
 //
 
+/**
+ *  使用 Insta360SDK
+ *  添加头文件引用 #import <ARVPlayerController/ARVPlayerController.h>
+ *  如果是视频，需继承委托, 并实现代理方法
+ *  初始化ARVPlayerController，初始化单个文件方式进行初始化。
+ *  将self.player.playerView添加作为当前view的subview用来显示图像
+ */
+
+//MARK: - 定义设备屏幕的宽和高
 #define ScreenWidth ([UIScreen mainScreen].bounds.size.width)
 #define ScreenHeight ([UIScreen mainScreen].bounds.size.height)
 
@@ -16,27 +25,43 @@
 
 @interface ARVPlayerVC ()<ARVPlayerStatusDelegate>
 
+/** 是否可以播放*/
 @property (nonatomic) BOOL isPlaying;
+/** 是否是视频结尾*/
 @property (nonatomic) BOOL isVideoEnd;
+/** 是否可以拖动进度条*/
 @property (nonatomic) BOOL isSliding;
+/** 是否可以拖拽*/
 @property (nonatomic) BOOL isHandleDrag;
+/** 是否是单屏*/
 @property (nonatomic) BOOL isSingleScrren;
 @property (nonatomic) NSInteger viewModeType;
-
+/** 持续时间*/
 @property (nonatomic, strong) NSString *duration;
+/** 指示器*/
 @property (nonatomic, strong) UIActivityIndicatorView *indicatorView;
 @property (nonatomic, strong) ARVPlayerItem *playerItem;
 @property (nonatomic, strong) ARVPlayerController *playerController;
+/** 播放视图工具条视图*/
 @property (weak, nonatomic) IBOutlet UIView *videoToolView;
+/** 播放按钮*/
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
+/** 进度滑动器*/
 @property (weak, nonatomic) IBOutlet UISlider *progressSlider;
+/** 时间展示栏*/
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
+/** 基本操作视图工具条*/
 @property (weak, nonatomic) IBOutlet UIView *basicToolView;
+/** 单双屏展示按钮*/
 @property (weak, nonatomic) IBOutlet UIButton *screenButton;
+/** 展示画面是可以通过拖拽方式动还是可以通过陀螺仪方式动*/
 @property (weak, nonatomic) IBOutlet UIButton *handleButton;
+/** 鱼眼效果展示*/
 @property (weak, nonatomic) IBOutlet UIButton *fisheyeButton;
+/** 透视效果展示*/
 @property (weak, nonatomic) IBOutlet UIButton *perspectiveButton;
+/** 小行星效果展示*/
 @property (weak, nonatomic) IBOutlet UIButton *asteriodButton;
 @end
 
