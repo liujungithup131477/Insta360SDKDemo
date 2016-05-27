@@ -212,7 +212,7 @@
 }
 
 /**
- *  根据对应按钮 tag 值来设置视图投影观看方式 
+ *  根据对应按钮 tag 值来设置视图投影观看方式
  *
  *  @param sender <#sender description#>
  */
@@ -294,7 +294,7 @@
 #pragma mark - ARVPlayerStatusDelegate
 - (void)playerStatusChanged:(INSPlayerStatus)status {
     switch (status) {
-        case INSPlayerStatusPrepared:
+        case INSPlayerStatusPrepared:  // 准备状态
         {
             NSLog(@"INSPlayerStatusPrepared");
             double duration = self.playerController.duration;
@@ -306,7 +306,7 @@
             });
         }
             break;
-        case INSPlayerStatusBuffering:
+        case INSPlayerStatusBuffering:  // 缓冲状态
         {
             NSLog(@"INSPlayerStatusBuffering");
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -321,20 +321,20 @@
             });
         }
             break;
-        case INSPlayerStatusPlaying:
+        case INSPlayerStatusPlaying:  // 播放状态
         {
             NSLog(@"INSPlayerStatusPlaying");
             self.isVideoEnd = NO;
             self.isPlaying = YES;
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.playButton setTitle:@"暂停" forState:UIControlStateNormal];
-                if ([self.indicatorView isAnimating]) {
+                if ([self.indicatorView isAnimating]) {  // 判断指示器是否还在动画中
                     [self.indicatorView stopAnimating];
                 }
             });
         }
             break;
-        case INSPlayerStatusPaused:
+        case INSPlayerStatusPaused:  // 暂停状态
         {
             NSLog(@"INSPlayerStatusPaused");
             self.isPlaying = NO;
@@ -343,7 +343,7 @@
             });
         }
             break;
-        case INSPlayerStatusEnd:
+        case INSPlayerStatusEnd:  // 完成状态
         {
             NSLog(@"INSPlayerStatusEnd");
             self.isVideoEnd = YES;
@@ -353,12 +353,12 @@
             });
         }
             break;
-        case INSPlayerStatusFailed:
+        case INSPlayerStatusFailed:  // 失败状态
         {
             NSLog(@"播放失败");
         }
             break;
-        case INSPlayerStatusUnknown:
+        case INSPlayerStatusUnknown:  // 失败状态
         {
             NSLog(@"INSPlayerStatusUnknown");
         }
