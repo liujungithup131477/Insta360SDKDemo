@@ -77,7 +77,7 @@ typedef NS_ENUM(NSInteger, ARVPlayRepeatMode) {
  */
 - (instancetype)initWithFrame:(CGRect)frame playList:(NSArray<ARVPlayerItem*> *)list renderType:(INSRenderType)type;
 
-/** 渲染视图*/
+/** 渲染视图，显示播放画面的视图*/
 @property (nonatomic, strong) INSRenderView *playerView;
 /** 当前的播放源文件*/
 @property (nonatomic, strong) ARVPlayerItem *currentItem;
