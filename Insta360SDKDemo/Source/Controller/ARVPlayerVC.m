@@ -33,7 +33,7 @@
 @property (nonatomic) BOOL isSliding;
 /** 是否可以拖拽*/
 @property (nonatomic) BOOL isHandleDrag;
-/** 是否是单屏*/
+/** 是否是单屏，默认是单屏*/
 @property (nonatomic) BOOL isSingleScrren;
 @property (nonatomic) NSInteger viewModeType;
 /** 持续时间*/
@@ -181,11 +181,14 @@
 }
 
 #pragma mark - 照片/视频可调整的共同参数
+/**
+ *  处理单双屏的按钮事件
+ */
 - (IBAction)screenButtonClicked:(id)sender {
     UIButton *button = (UIButton *)sender;
     if (self.isSingleScrren) {
         [button setTitle:@"双屏" forState:UIControlStateNormal];
-        self.playerController.playerView.presentMode = INSViewPresentModeWidthDirectionDuplicate;
+        self.playerController.playerView.presentMode = INSViewPresentModeHeightDirectionDuplicate;
     } else {
         [button setTitle:@"单屏" forState:UIControlStateNormal];
         self.playerController.playerView.presentMode = INSViewPresentModeSingle;
