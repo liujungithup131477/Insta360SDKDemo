@@ -196,6 +196,9 @@
     self.isSingleScrren = !self.isSingleScrren;
 }
 
+/**
+ *  处理拖拽模式和陀螺仪模式的按钮事件
+ */
 - (IBAction)handleButtonClicked:(id)sender {
     UIButton *button = (UIButton *)sender;
     if (self.isHandleDrag) {
