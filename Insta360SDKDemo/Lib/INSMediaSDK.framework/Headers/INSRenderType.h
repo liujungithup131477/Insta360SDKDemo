@@ -6,6 +6,9 @@
 //  Copyright © 2016 Insta360. All rights reserved.
 //
 
+/**
+ 此类作用是用来定义播放画面渲染的选项
+ */
 #import <Foundation/Foundation.h>
 
 
@@ -21,8 +24,8 @@ typedef enum
 typedef enum
 {
     INSViewPresentModeSingle,                       //单屏模式
-    INSViewPresentModeWidthDirectionDuplicate,      //宽度方向双屏
-    INSViewPresentModeHeightDirectionDuplicate,     //高度方向双屏
+    INSViewPresentModeWidthDirectionDuplicate,      //宽度方向双屏，即左右方向上的渲染
+    INSViewPresentModeHeightDirectionDuplicate,     //高度方向双屏，即上下方向的双屏
 } INSViewPresentMode;
 
 //视图投影观看方式
