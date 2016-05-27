@@ -211,6 +211,11 @@
     self.isHandleDrag = !self.isHandleDrag;
 }
 
+/**
+ *  根据对应按钮 tag 值来设置视图投影观看方式 
+ *
+ *  @param sender <#sender description#>
+ */
 - (IBAction)viewModeButtonClicked:(id)sender {
     UIButton *button = (UIButton *)sender;
     [self.fisheyeButton setBackgroundColor:[UIColor clearColor]];
