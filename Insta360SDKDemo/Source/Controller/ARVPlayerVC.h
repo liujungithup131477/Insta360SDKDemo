@@ -10,5 +10,8 @@
 
 @interface ARVPlayerVC : UIViewController
 
+/**
+ *  用来判断要播放的是什么资源
+ */
 @property (nonatomic) BOOL isSourceVideo;
 @end
