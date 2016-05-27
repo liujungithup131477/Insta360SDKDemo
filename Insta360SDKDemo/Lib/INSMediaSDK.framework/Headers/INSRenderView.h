@@ -6,6 +6,9 @@
 //  Copyright © 2016年 insta360. All rights reserved.
 //
 
+/**
+ *  此类用来处理屏幕的渲染方式
+ */
 
 #import <UIKit/UIKit.h>
 #import "INSRenderType.h"
@@ -81,6 +84,7 @@
 
 /**
  *  画面展示模式，一般为INSViewPresentModeSingle，但对于部分render可能为其他值
+ *  即单屏显示还是双屏显示
  */
 @property (nonatomic) INSViewPresentMode presentMode;
 
