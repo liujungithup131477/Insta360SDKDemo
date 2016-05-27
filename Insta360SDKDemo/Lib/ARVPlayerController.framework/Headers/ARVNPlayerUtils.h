@@ -10,6 +10,9 @@
 #import <UIKit/UIKit.h>
 #import <INSMediaSDK/INSMediaSDK.h>
 
+/**
+ *  根据给定的条件找到对应的源文件将要从什么地方开始播放
+ */
 @interface ARVNPlayerUtils : NSObject
 
 /**

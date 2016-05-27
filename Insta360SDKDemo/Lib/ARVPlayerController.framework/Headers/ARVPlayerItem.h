@@ -6,7 +6,7 @@
 //  Copyright © 2016 Insta360. All rights reserved.
 //
 
-// MARK: - 播放单个视频文件类
+// MARK: - 单个播放器文件类文件类
 
 #import <Foundation/Foundation.h>
 #import <INSMediaSDK/INSMediaSDK.h>
@@ -30,7 +30,7 @@ typedef enum:NSInteger
 @property (nonatomic, assign, readonly) ARVItemType itemType;
 /** 播放文件源的路径*/
 @property (nonatomic, strong, readonly) NSURL *itemURL;
-/** 视频文件播放的偏移量*/
+/** 视频文件组播放的偏移量*/
 @property (nonatomic, copy, readonly) NSString *itemOffset;
 
 @end

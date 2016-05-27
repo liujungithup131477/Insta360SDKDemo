@@ -6,6 +6,16 @@
 //  Copyright © 2016 Insta360. All rights reserved.
 //
 
+/**
+ *  ARVPlayerController -- 播放器类
+ *  作用：可以只处理一个文件，也可以处理多个文件（数组方式），还可以通过代理获取播放器当前的状态。
+ *
+ *  ARVPlayerItem -- 单个源文件信息类
+ *  作用：用来处理对应的单个源文件的基本信息
+ *
+ *  ARVNPlayerUtils
+ *  作用：如果 ARVPlayerController 类中包含的 ARVPlayerItem 类（多个数据源组成）,用来确定播放器当前要播放的源文件 ARVPlayerItem 的位置以offset 的方式确定，默认 nil 从头开始播放。
+ */
 #import "ARVPlayerItem.h"
 #import "ARVNPlayerUtils.h"
 #import <Foundation/Foundation.h>
