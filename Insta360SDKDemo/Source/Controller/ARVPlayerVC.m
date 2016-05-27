@@ -29,7 +29,7 @@
 @property (nonatomic) BOOL isPlaying;
 /** 是否是视频结尾*/
 @property (nonatomic) BOOL isVideoEnd;
-/** 是否可以拖动进度条*/
+/** 判断拖动进度条时是否需要更改对应的 slider 和 timelable 的值*/
 @property (nonatomic) BOOL isSliding;
 /** 是否可以拖拽*/
 @property (nonatomic) BOOL isHandleDrag;
@@ -167,7 +167,7 @@
     self.asteriodButton.tag = 2;
     [self.fisheyeButton setBackgroundColor:[UIColor grayColor]];
     
-    self.progressSlider.enabled = NO;
+    self.progressSlider.enabled = YES;
     [self.progressSlider addTarget:self action:@selector(sliderTouchDown:) forControlEvents:UIControlEventTouchDown];
     [self.progressSlider addTarget:self action:@selector(sliderTouchUp:) forControlEvents:UIControlEventTouchUpOutside | UIControlEventTouchUpInside];
 }
@@ -248,14 +248,17 @@
         [self.playerController play];
     }
     self.isPlaying = !self.isPlaying;
-    if (!self.progressSlider.enabled) {
-        self.progressSlider.enabled = YES;
-    }
+//    if (!self.progressSlider.enabled) {
+//        self.progressSlider.enabled = YES;
+//    }
+    self.progressSlider.enabled = !self.progressSlider.enabled;
+
 }
 
 - (IBAction)replaceButtonClicked:(id)sender {
 //    NSURL *fileURL = [NSURL URLWithString:@"http://kssws.ks-cdn.com/iwjw-test/anliInsta3603.insv"];
-    NSURL *fileURL = [NSURL URLWithString:@"http://60.55.12.147:80/45f1c9b883f8be484652306556e7f596.m3u8?w=1&key=19cbaf0bf152a9105c97a5998f776f3f&k=f77ff661a8c55b1ab955785b54e99c7a-5ae2-1464172960&bppcataid=961&type=phone.ios.vip&sv=7.5&platform=iphone4&ft=1&accessType=wifi&vvid=7D38F7BB-CB9E-423A-8620-707DC7739B0E&video=true"];
+//    NSURL *fileURL = [NSURL URLWithString:@"http://60.55.12.147:80/45f1c9b883f8be484652306556e7f596.m3u8?w=1&key=19cbaf0bf152a9105c97a5998f776f3f&k=f77ff661a8c55b1ab955785b54e99c7a-5ae2-1464172960&bppcataid=961&type=phone.ios.vip&sv=7.5&platform=iphone4&ft=1&accessType=wifi&vvid=7D38F7BB-CB9E-423A-8620-707DC7739B0E&video=true"];
+    NSURL *fileURL = [NSURL URLWithString:@"http://cloud.insta360.com/public/media/mp4/88a951c7acf980f716c1bf1eb6cf12ca_1440x720.mp4"];
     [ARVNPlayerUtils asyncVideoOffsetBy:fileURL offsetBlock:^(NSString *offset) {
     dispatch_async(dispatch_get_main_queue(), ^{
         NSLog(@"offset: %@", offset);
@@ -353,6 +356,11 @@
     }
 }
 
+/**
+ *  设置 slider 和 timelable 的值
+ *
+ *  @param time 当前播放的时间
+ */
 - (void)updateCurrentTime:(double)time {
     if (!self.isSliding) {
         dispatch_async(dispatch_get_main_queue(), ^{
