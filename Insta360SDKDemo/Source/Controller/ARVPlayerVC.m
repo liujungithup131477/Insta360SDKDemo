@@ -409,6 +409,11 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+/**
+ *  屏幕是否可以自动旋转
+ *
+ *  @return YES--可以，NO--不可以。
+ */
 - (BOOL)shouldAutorotate {
     if(self.playerController.playerView.interactiveMode == INSViewInteractiveModeGyro) {
         return NO;
