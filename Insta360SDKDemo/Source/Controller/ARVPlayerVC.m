@@ -275,6 +275,7 @@
     double value = slider.value;
     NSLog(@"滑动时间seek:%f", value);
     [self.progressSlider setValue:ceilf(value)];
+    // 根据时间值重新确定播放器播放媒体资源的位置
     [self.playerController seekToTime:ceilf(value)*1000];
 }
 

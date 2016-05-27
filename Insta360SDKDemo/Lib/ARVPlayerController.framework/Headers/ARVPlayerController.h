@@ -125,7 +125,9 @@ typedef NS_ENUM(NSInteger, ARVPlayRepeatMode) {
  *  使播放器进入停止状态
  */
 - (void)stop;
-//TODO: - 有待深究
+/**
+ *  根据时间值重新确定播放器的播放位置
+ */
 - (void)seekToTime:(double)time;
 /**
  *  局域网播放视频时，设置YES实现低延迟
