@@ -400,6 +400,9 @@
     return formatTime;
 }
 
+/**
+ *  返回按钮的处理
+ */
 - (IBAction)exitButtonClicked:(id)sender {
     NSLog(@"%s", __FUNCTION__);
     [self.playerController stop];
