@@ -6,6 +6,9 @@
 //  Copyright © 2015年 insta360. All rights reserved.
 //
 
+/**
+ *  播放器的计时器
+ */
 #import <Foundation/Foundation.h>
 
 @interface INSTimer : NSObject
