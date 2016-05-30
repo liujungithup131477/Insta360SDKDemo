@@ -6,6 +6,9 @@
 //  Copyright © 2015年 insta360. All rights reserved.
 //
 
+/**
+ *  视频的基本信息
+ */
 #import <Foundation/Foundation.h>
 #import <UIKit/UIImage.h>
 
