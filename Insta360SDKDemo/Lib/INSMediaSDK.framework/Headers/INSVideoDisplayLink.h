@@ -6,6 +6,10 @@
 //  Copyright © 2015年 insta360. All rights reserved.
 //
 
+/**
+ *  播放器的屏幕显示，基于苹果的 CADisplayLink 技术
+ *
+ */
 #import <Foundation/Foundation.h>
 #import "QuartzCore/CADisplayLink.h"
 
