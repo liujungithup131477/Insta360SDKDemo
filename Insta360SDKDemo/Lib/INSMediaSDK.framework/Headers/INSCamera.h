@@ -17,7 +17,7 @@
 - (instancetype) initWithPerspectiveYFov:(float) yFov aspect:(float)aspect nearZ:(float)nearZ farZ:(float)farZ;
 
 
-//projection 矩阵参数
+//projection（投影） 矩阵参数
 @property (nonatomic) float xFov;
 @property (nonatomic) float yFov;
 @property (nonatomic) float zNear;

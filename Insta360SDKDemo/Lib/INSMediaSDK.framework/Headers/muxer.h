@@ -24,10 +24,7 @@ class Muxer {
     Close();
   }
   
-  /*
-   * @param options: set context opt
-   *
-   */
+    
   bool Open(const std::map<std::string, std::string> &options) noexcept(true);
 
   bool Close() noexcept(true);
